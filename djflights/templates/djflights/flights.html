@@ -1,0 +1,25 @@
+{% extends "djflights/base.html" %}
+{% load static %}
+
+{% block title %}Django Flights{% endblock %}
+
+{% block extend_header %}{% endblock %}
+
+{% block extend_footer %}{% endblock %}
+
+{% block body %}
+<div style="padding-bottom: 40px;" class="container">
+    <h4 align="center" class="md-title" style="padding: 20px 0;">
+        List of Flights
+    </h4>
+    <ul class="flight-lists">
+        {% for flight in flights %}
+        <div class="col-md-6">
+            <li>
+                <a href="{% url 'flight' flight.id %}">{{ flight }}</a>
+            </li>
+        </div>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

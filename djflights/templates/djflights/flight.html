@@ -1,0 +1,59 @@
+{% extends "djflights/base.html" %}
+{% load static %}
+
+{% block title %}Flight Details{% endblock %}
+
+{% block extend_header %}{% endblock %}
+
+{% block extend_footer %}{% endblock %}
+
+{% block body %}
+<div class="container">
+    <section class="flight-details">
+        <h4 class="md-title">Flight {{ flight.id }}</h4>
+        <p><strong>Origin:</strong> {{ flight.origin }}</p>
+        <p><strong>Destination:</strong> {{ flight.destination }}</p>
+    </section>
+    <section class="passenger-details">
+        <h2 class="md-title">List of Passengers</h2>
+        <ol>
+            <p>
+                {% for passenger in passengers %}
+                <li>{{ passenger|title }}</li>
+                {% empty %}
+                <li>No passengers have booked this flight.</li>
+                {% endfor %}
+            </p>
+        </ol>
+    </section>
+    <hr>
+    <section class="add-passenger">
+        <h2 align="center" class="md-title">Add a Passenger</h2>
+        {% if non_passengers %}
+        <form action="{% url 'book' flight.id %}" method="POST">
+            {% csrf_token %}
+            <p align="center">
+                <select name="passenger">
+                    {% for passenger in non_passengers %}
+                    <option value="{{ passenger.id }}">{{ passenger|title }}</option>
+                    {% endfor %}
+                </select>
+            </p>
+            <p align="center">
+                <button class="book-flight-btn">
+                    <input type="submit" value="Book Flight" />
+                </button>
+            </p>
+        </form>
+        {% else %}
+        <div>No passengers to add.</div>
+        {% endif %}
+    </section>
+
+    <p align="center">
+        <button class="back-btn">
+            <a href="{% url 'flights' %}">List of Flights</a>
+        </button>
+    </p>
+</div>
+{% endblock %}

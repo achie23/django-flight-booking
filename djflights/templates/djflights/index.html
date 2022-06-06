@@ -1,0 +1,102 @@
+{% extends "djflights/base.html" %}
+{% load static %}
+
+{% block title %}Django Flights{% endblock %}
+
+{% block extend_header %}{% endblock %}
+
+{% block extend_footer %}{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <section class="banner">
+            <div align="center">
+                <h1 class="lg-title">Welcome to Air Django</h1>
+            </div>
+            <div align="center">
+                <p>We provide high quality and very affordable services. Travel with us for comfort, safety, security and assurance.</p>
+                <p>
+                    <button class="banner-btn"><a href="{% url 'flights' %}">Book a flight</a></button>
+                </p>
+            </div>
+        </section>
+        <section class="about">
+            <div class="container">
+                <h2 align="center" class="md-title">About Us</h2>
+                <div align="center" class="col-lg-6">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                        perspiciatis
+                        accusamus ea maxime. Quos mollitia unde ipsum exercitationem dolores neque nostrum, cupiditate vitae
+                        quasi,
+                        reprehenderit inventore debitis quisquam, sed doloremque. Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Alias tempore doloribus, dicta, autem molestiae laudantium dolorum, illum modi id.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores perspiciatis
+                        accusamus ea maxime. Quos mollitia unde ipsum exercitationem dolores neque nostrum, cupiditate vitae.</p>
+                </div>
+                <div align="center" class="col-lg-6">
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+                        perspiciatis
+                        accusamus ea maxime. Quos mollitia unde ipsum exercitationem dolores neque nostrum, cupiditate vitae
+                        quasi,
+                        reprehenderit inventore debitis quisquam, sed doloremque. Lorem, ipsum dolor sit amet consectetur
+                        adipisicing elit. Alias tempore doloribus, dicta, autem molestiae laudantium dolorum, illum modi id.
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores perspiciatis accusamus ea maxime.
+                        Quos mollitia unde ipsum exercitationem dolores neque nostrum, cupiditate vitae.</p>
+                </div>
+            </div>
+        </section>
+        <section class="services">
+            <h2 align="center" class="md-title">Our Services</h2>
+            <div class="container">
+                {% for service in services %}
+                {% if service.is_active %}
+                <div align="center" class="col-md-4">
+                    <h4 class="sm-title"><a href="">{{service.name}}</a></h4>
+                    <!-- <p>{{service.description|safe}}</p> -->
+                    <div class="service-image">
+                        <a href="{{ service.image.url }}"><img src="{{ service.image.url }}" alt="..."></a>
+                    </div>
+                    <br>
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </section>
+        <section>
+            <div class="packages">
+                <div class="container">
+                    <h2 align="center" class="md-title">
+                       <a href="{% url 'packages' %}">Our Packages</a>
+                    </h2>
+                    <div class="package-item">
+                        {% for package in packages %}
+                        {% if package.is_active %}
+                        <div class="row g-4 align-items-center">
+                            <div class="col-md-3">
+                                <div class="package-image">
+                                    <a href="{{ package.image.url }}"><img src="{{ package.image.url }}" alt="..."></a>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="package-item-content">
+                                    <h4 class="sm-title"><a href="">{{package.name}}</a></h4>
+                                    <ul class="package-list">
+                                        <li>{{package.description}}</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <p align="center">
+            <button class="back-btn">
+                <a style="text-decoration: none;" href="#">Back to Top</a>
+            </button>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,238 @@
+body {
+  background: #f1f1f1;
+  font-family: sans-serif;
+  font-size: 18px;
+}
+hr {
+  height: 1px;
+  background-color: #23527C;
+  border: none;
+}
+
+/* navbar styles */
+.top-menu {
+  background: #529bb8; 
+  color: white;
+}
+.menu-items ul {
+  list-style-type: none;
+}
+.menu-items li {
+  display:inline-block;
+}
+.menu-items a {
+  display: block;
+  text-decoration: none;
+  font-size: 23px;
+  color: white;
+  font-weight: 400;
+  padding: 15px;
+  font-family: 'Courier Prime', monospace;
+}
+.menu-items a:hover{
+  background-color:#23527C;
+}
+
+/* buttons and links */
+button, a {
+  -webkit-transition: all 200ms ease-in-out 0s;
+  -o-transition: all 200ms ease-in-out 0s;
+  transition: all 200ms ease-in-out 0s;
+  text-decoration: none;
+}
+button:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+a:hover {
+  text-decoration: none;
+}
+
+/* banner styles */
+.banner-btn, .book-flight-btn, .back-btn, .form-btn {
+  background-color: #23527C;
+  font-size: 20px;
+  font-weight: medium;
+  margin: 10px 0;
+  padding: 8px 10px;
+  border: 1px solid #529bb8;
+  border-radius: 10px;
+}
+.book-flight-btn {
+  margin: 3px 0 10px 0;
+  padding: 8px 10px;
+}
+.banner-btn:hover, .book-flight-btn:hover, .back-btn:hover, .form-btn:hover {
+  background-color: #529bb8;
+}
+.banner-btn a, .book-flight-btn a, .back-btn a {
+  color: #ffffff;
+}
+.banner-btn a:hover, .book-flight-btn a:hover, .back-btn a:hover {
+  background-color: #529bb8;
+}
+
+
+/* titles */
+.lg-title {
+  color: #529bb8;
+  font-size: 45px;
+  line-height: normal;
+  font-weight: 900;
+  font-family: 'Courier Prime', monospace;
+}
+.md-title {
+  color: #23527C;
+  font-size: 35px;
+  line-height: normal;
+  font-weight: 700;
+  font-family: 'Courier Prime', monospace;
+}
+.sm-title {
+  color: #529bb8;
+  font-size: 28px;
+  line-height: normal;
+  font-weight: 700;
+  font-family: 'Courier Prime', monospace;
+}
+
+/* about */
+.about {
+  margin-bottom: 50px;
+}
+.about p {
+  text-align: justify;
+}
+
+/* Our Services */
+.services p {
+  text-align: left;
+}
+.service-image img {
+  border-radius: 6px;
+  width: 246px;
+  height: 184px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+/* Packages */
+.packages {
+  padding: 60px 0;
+}
+.package-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #E0E0E0;
+}
+.package-image img {
+  border-radius: 6px;
+  width: 246px;
+  height: 184px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+.package-item-content > p:last-child {
+  margin-bottom: 0;
+}
+.package-list {
+  list-style-type: none;
+	padding: 5px 0 16px;
+}
+.package-list li {
+  display: inline-block;
+  padding-right: 20px;
+}
+
+/* package-details */
+.package-items {
+  padding: 50px 0;
+}
+.package-items .col-md-4 {
+  margin-bottom: 50px;
+}
+
+/* flights list styles */
+.flight-lists {
+  list-style-type: none;
+}
+.flight-lists li {
+  padding: 15px;
+}
+.flight-lists a {
+  text-decoration: none;
+  color: #131212;
+}
+.flight-lists a:hover {
+  color: #23527C;
+}
+
+/* flight & passenger details styles */
+.flight-details {
+  padding: 15px;
+}
+.flight-details p {
+  font-size: 20px;
+}
+.passenger-details {
+  padding: 15px;
+}
+.passenger-details li {
+  font-size: 20px;
+}
+.add-passenger {
+  padding: 10px;
+}
+.add-passenger select {
+  width: 35%;
+}
+
+/* form input styles */
+input[type=text], input[type=email], select, textarea {
+  width: 70%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical
+}
+.contact-form textarea {
+  width: 70%;
+}
+.contact-form{
+  padding-left: 20%;
+}
+.form-section {
+  margin: 2px 0 50px 0;
+}
+
+
+/* footer */
+.footerCol {
+  padding: 10px 0px 20px 0px;
+  text-align: center;
+  background: #23527C;
+  color: white;
+}
+.socialCol li {
+  display: inline-block;
+  color: white;
+}
+.socialCol li + li {
+  padding-left: 25px;
+}
+.socialCol img {
+  max-width: 30px;
+  max-height: 30px;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+.copyrightCol {
+	padding: 20px 0 0;
+  font-size: 14px;
+}
+.copyrightCol p {
+	margin: 0;
+}

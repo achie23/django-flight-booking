@@ -1,0 +1,16 @@
+{% load static %}
+<header class="row top-menu">
+    <div class="col-md-3">
+      <h1 class="text-center">
+        <a href="{% url 'index' %}" style="color: #ffffff;">AirDjango</a>
+      </h1>
+    </div>
+    <nav class="col-md-9 text-right menu-items">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'flights' %}">Flights</a></li>
+        <li><a href="{% url 'packages' %}">Packages</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+    </nav>
+</header>

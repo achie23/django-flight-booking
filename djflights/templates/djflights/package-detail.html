@@ -1,0 +1,27 @@
+{% extends "djflights/base.html" %}
+{% load static %}
+
+{% block title %}AirDjango Package{% endblock %}
+
+{% block extend_header %}{% endblock %}
+
+{% block extend_footer %}{% endblock %}
+
+{% block body %}
+<section style="padding-bottom: 40px;" class="package-detail">
+    <div class="container">
+        <h4 align="center" class="md-title" style="padding-top: 20px;">Our Packages</h4>
+        <div align="center" class="package-items">
+            {% for package in packages %}
+            {% if package.is_active %}
+            <div class="col-md-6" style="padding: 20px">
+                <a href="{{ package.image.url }}">
+                    <img src="{{ package.image.url }}" alt="..." width="400px" height="300px" class="pImg">
+                </a>
+            </div>
+            {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
